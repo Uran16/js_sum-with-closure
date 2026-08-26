@@ -1,12 +1,15 @@
-'use strict';
-
-/**
- *
- * @return {function}
- */
-
 function makeRobotAccountant() {
-  // write code here
+  let calls = 0;
+
+  return function(a, b) {
+    calls += 1;
+
+    if (calls > 3 && calls % 2 === 0) {
+      return 'Error';
+    }
+
+    return a + b;
+  };
 }
 
 module.exports = makeRobotAccountant;
